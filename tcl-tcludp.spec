@@ -4,7 +4,7 @@
 
 Name:		tcl-%{realname}
 Version:	1.0.8
-Release:	6%{?dist}
+Release:	7%{?dist}
 Summary:	Tcl extension for UDP support
 Group:		System Environment/Libraries
 License:	MIT
@@ -42,6 +42,9 @@ rm -rf %{buildroot}
 %{_mandir}/mann/udp*
 
 %changelog
+* Fri Feb 15 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.8-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.8-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
