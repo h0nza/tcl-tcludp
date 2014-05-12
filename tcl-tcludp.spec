@@ -3,14 +3,13 @@
 %define realname tcludp
 
 Name:		tcl-%{realname}
-Version:	1.0.8
-Release:	8%{?dist}
+Version:	1.0.10
+Release:	1%{?dist}
 Summary:	Tcl extension for UDP support
 Group:		System Environment/Libraries
 License:	MIT
 URL:		http://sourceforge.net/projects/tcludp
 Source0:	http://downloads.sourceforge.net/%{realname}/%{realname}-%{version}.tar.gz
-BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 Provides:	tcl-udp = %{version}-%{release}
 Provides:	%{realname} = %{version}-%{release}
 BuildRequires:	tcl-devel, tk-devel
@@ -32,16 +31,15 @@ make DESTDIR=%{buildroot} install
 install -d %{buildroot}%{tcl_sitearch}
 mv %{buildroot}%{_libdir}/udp%{version} %{buildroot}%{tcl_sitearch}/udp%{version}
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %doc README license.terms ChangeLog
 %{tcl_sitearch}/udp%{version}/
 %{_mandir}/mann/udp*
 
 %changelog
+* Mon May 12 2014 Tom Callaway <spot@fedoraproject.org> - 1.0.10-1
+- update to 1.0.10
+
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.8-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
