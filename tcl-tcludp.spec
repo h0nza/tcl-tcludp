@@ -4,7 +4,7 @@
 
 Name:		tcl-%{realname}
 Version:	1.0.10
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Tcl extension for UDP support
 Group:		System Environment/Libraries
 License:	MIT
@@ -13,7 +13,7 @@ Source0:	http://downloads.sourceforge.net/%{realname}/%{realname}-%{version}.tar
 Provides:	tcl-udp = %{version}-%{release}
 Provides:	%{realname} = %{version}-%{release}
 BuildRequires:	tcl-devel, tk-devel
-Requires:	tcl(abi) = 8.5
+Requires:	tcl(abi) = 8.6
 
 %description
 The Tcl UDP extension provides a simple library to support UDP socket in Tcl.
@@ -37,6 +37,9 @@ mv %{buildroot}%{_libdir}/udp%{version} %{buildroot}%{tcl_sitearch}/udp%{version
 %{_mandir}/mann/udp*
 
 %changelog
+* Wed May 28 2014 Jaroslav Škarvada <jskarvad@redhat.com> - 1.0.10-3
+- Changed requires to require tcl-8.6
+
 * Wed May 21 2014 Jaroslav Škarvada <jskarvad@redhat.com> - 1.0.10-2
 - Rebuilt for https://fedoraproject.org/wiki/Changes/f21tcl86
 
