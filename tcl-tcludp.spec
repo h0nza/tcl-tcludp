@@ -1,10 +1,10 @@
-%{!?tcl_version: %define tcl_version %(echo 'puts $tcl_version' | tclsh)}
-%{!?tcl_sitearch: %define tcl_sitearch %{_libdir}/tcl%{tcl_version}}
-%define realname tcludp
+%{!?tcl_version: %global tcl_version %(echo 'puts $tcl_version' | tclsh)}
+%{!?tcl_sitearch: %global tcl_sitearch %{_libdir}/tcl%{tcl_version}}
+%global realname tcludp
 
 Name:		tcl-%{realname}
 Version:	1.0.11
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Tcl extension for UDP support
 Group:		System Environment/Libraries
 License:	MIT
@@ -26,17 +26,20 @@ The Tcl UDP extension provides a simple library to support UDP socket in Tcl.
 make %{?_smp_mflags}
 
 %install
-rm -rf %{buildroot}
 make DESTDIR=%{buildroot} install
 install -d %{buildroot}%{tcl_sitearch}
 mv %{buildroot}%{_libdir}/udp%{version} %{buildroot}%{tcl_sitearch}/udp%{version}
 
 %files
-%doc README license.terms ChangeLog
+%doc README ChangeLog
+%license license.terms
 %{tcl_sitearch}/udp%{version}/
 %{_mandir}/mann/udp*
 
 %changelog
+* Tue Jan 26 2016 Tom Callaway <spot@fedoraproject.org> - 1.0.11-3
+- modernize spec file
+
 * Fri Jun 19 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.11-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
