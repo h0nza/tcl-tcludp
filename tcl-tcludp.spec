@@ -6,7 +6,6 @@ Name:		tcl-%{realname}
 Version:	1.0.11
 Release:	9%{?dist}
 Summary:	Tcl extension for UDP support
-Group:		System Environment/Libraries
 License:	MIT
 URL:		http://sourceforge.net/projects/tcludp
 Source0:	http://downloads.sourceforge.net/%{realname}/%{realname}-%{version}.tar.gz
