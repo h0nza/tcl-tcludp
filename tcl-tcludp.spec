@@ -11,6 +11,7 @@ URL:		http://sourceforge.net/projects/tcludp
 Source0:	http://downloads.sourceforge.net/%{realname}/%{realname}-%{version}.tar.gz
 Provides:	tcl-udp = %{version}-%{release}
 Provides:	%{realname} = %{version}-%{release}
+BuildRequires: make
 BuildRequires:  gcc
 BuildRequires:	tcl-devel, tk-devel
 Requires:	tcl(abi) = 8.6
