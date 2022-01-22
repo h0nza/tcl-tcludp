@@ -4,7 +4,7 @@
 
 Name:		tcl-%{realname}
 Version:	1.0.11
-Release:	15%{?dist}
+Release:	16%{?dist}
 Summary:	Tcl extension for UDP support
 License:	MIT
 URL:		http://sourceforge.net/projects/tcludp
@@ -38,6 +38,9 @@ mv %{buildroot}%{_libdir}/udp%{version} %{buildroot}%{tcl_sitearch}/udp%{version
 %{_mandir}/mann/udp*
 
 %changelog
+* Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.11-16
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.11-15
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
